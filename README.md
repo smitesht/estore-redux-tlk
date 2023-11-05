@@ -23,6 +23,7 @@ export const cartSlice = createSlice({
   name: "Cart",
   initialState,
   reducers: {
+
     addToCart: (state, action) => {
       const cart = state.cartItems.filter(
         (data) => data.id == action.payload.id
@@ -44,6 +45,7 @@ export const cartSlice = createSlice({
       }
     },
 
+
     addQty: (state, action) => {
       const objcart = state.cartItems.find(
         (data) => data.id === action.payload
@@ -58,6 +60,8 @@ export const cartSlice = createSlice({
         state.totalQty = state.totalQty + 1;
       }
     },
+
+
     removeQty: (state, action) => {
       const objcart = state.cartItems.find(
         (data) => data.id === action.payload
